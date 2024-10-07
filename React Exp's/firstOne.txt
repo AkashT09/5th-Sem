@@ -1,0 +1,64 @@
+(Department.js)
+
+import React,{Component} from "react";
+
+export class Department extends Component {
+    render() {
+        return (
+            <div className="container">
+                <h3>This is the Department Page.</h3>
+            </div>
+        )
+    }
+}
+
+
+(Employee.js)
+
+import React,{Component} from "react";
+
+export class Employee extends Component{
+    render() {
+        return (
+            <div className="container">
+                <h3><i>This is the Employee Page.</i></h3>
+            </div>
+        )
+    }
+}
+
+
+(Home.js)
+
+import React,{components} from  'react';
+export class Home extends components {
+
+    render(){
+        return(
+            <div className='container'>
+                <h3>wellcome to C.B.Kore Polytechnic Chikodi.</h3>
+            </div>
+        )
+    }
+}
+
+
+(App.js)
+
+import React from 'react';
+import './App.css';
+import { Home } from './components/Home';
+import { Department } from './components/Department';
+import { Employee } from './components/Employee';
+
+function App() {
+    return (
+        <div className="container">
+            <Home />
+            <Department />
+            <Employee />
+        </div>
+    );
+}
+
+export default App;
