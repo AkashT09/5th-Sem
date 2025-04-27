@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="S.js"></script>
+    <h1 style="text-align:center">COLLEGE REGISTRATION</h1>
+</head>
+<body>
+      <form  action="connect.php" method="post" onsubmit="return validateform();">
+        <label for="name">name:</label>
+        <input type="text" id="name" name="name">
+        <br><br>
+        <label for="mail">email:</label>
+        <input type="email" id="mail" name="mail">
+        <br><br>
+        <label for="pwd">password</label>
+        <input type="password" id="pwd" name="pwd">
+        <br><br>
+	 <label for="pno">phone number:</label>
+        <input type="text" id="pno" name="pno" pattern="[0-9\s]+" title="Please use only digit">
+        <br><br>
+        <label for="age">age:</label>
+        <input type="text" id="age" name="age" pattern="[0-9\s]+" title="Please use only digit">
+        <br><br>
+        <button type="submit" <button style="color: red;" >Submit</button>   
+</form>
+    <script>
+        function validateform() {
+            
+
+		var name = document.regform.name.value.trim();
+		var mail = document.regform.mail.value.trim();
+            var password = document.regform.pwd.value.trim();
+            var pno = document.regform.pno.value.trim();
+            var age = document.regform.age.value.trim();
+
+		  if (name === "") {
+                alert("Name cannot be blank");
+                return false;
+            }
+		if (mail === "") {
+                alert("Email cannot be blank");
+                return false;
+            }
+            if (password.length < 6 || password === "") {
+                alert("Password must be at least 6 characters long");
+                return false;
+            }
+            
+            if (pno.length !== 10 || isNaN(pno) || pno === "") {
+                alert("Phone number must be exactly 10 digits");
+                return false;
+            }
+            if (isNaN(age) || age < 11 || age > 60 || age === "") {
+                alert("Age must be between 11 and 60");
+                return false;
+            }
+		return true;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+       Style.css 
+                   
+form {
+    margin: auto;
+    width: 200px;
+}
+
+html {
+    display: table;
+    margin: auto;
+    text-align: center; 
+    width: 100%;
+    padding: 20px;
+}
+
+body {
+    background-color: lavender; 
+    border-width: medium; 
+    margin-top: 100px; 
+    margin-bottom: 100px; 
+    margin-right: 150px;
+    margin-left: 80px;
+    padding: 20px;
+}
